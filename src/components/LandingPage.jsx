@@ -44,7 +44,7 @@ const LandingPage = () => {
     try {
       // 1. Call backend to create order and get Razorpay details
       const orderResponse = await fetch(
-        `${import.meta.vite.VITE_SERVER_URL}/api/submit-order`,
+        `${import.meta.env.VITE_SERVER_URL}/api/submit-order`,
         {
           method: "POST",
           body: formData,
