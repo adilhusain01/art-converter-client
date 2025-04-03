@@ -37,7 +37,7 @@ const AdminDashboard = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        "http://localhost:5000/api/admin/orders",
+        `${import.meta.vite.VITE_SERVER_URL}/api/admin/orders`,
         {
           headers: {
             Authorization: `Bearer ${import.meta.env.VITE_ADMIN_API_KEY}`,
@@ -56,7 +56,7 @@ const AdminDashboard = () => {
   const updateOrderStatus = async (orderId, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/orders/${orderId}`,
+        `${import.meta.vite.VITE_SERVER_URL}/api/admin/orders/${orderId}`,
         { workStatus: status },
         {
           headers: {
